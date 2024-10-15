@@ -1,12 +1,14 @@
-version: '3'
+version: '4'
 services:
   api:
     build: 
       context: .
-      dockerfile: ./api/python/docker/Dockerfile
+      # dockerfile: ./api/python/docker/Dockerfile
+      dockerfile: ./api/go/docker/Dockerfile
     tty: true
     volumes:
-      - ./api/python/src:/app
+      # - ./api/python/src:/app
+      - ./api/go/src:/app
     ports:
       - 8080:8080
     depends_on:
