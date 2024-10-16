@@ -5,11 +5,14 @@ services:
       context: .
       # dockerfile: ./api/python/docker/Dockerfile
       # dockerfile: ./api/go/docker/Dockerfile
-      dockerfile: ./api/typescript/docker/Dockerfile
+      # dockerfile: ./api/typescript/docker/Dockerfile
+      dockerfile: ./api/rust/docker/Dockerfile
     tty: true
     volumes:
       # - ./api/python/src:/app
-      - ./api/typescript/src:/app
+      # - ./api/go/src:/app
+      # - ./api/typescript/src:/app
+      - ./api/rust/app:/app
     ports:
       - 8080:8080
     depends_on:
